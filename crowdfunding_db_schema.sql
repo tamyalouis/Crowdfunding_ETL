@@ -1,3 +1,4 @@
+#Original DB Schema created using ChatGPT and updated for specifics of the project.
 CREATE TABLE "campaign" (
     "cf_id" int NOT NULL PRIMARY KEY,
     "contact_id" int NOT NULL,
