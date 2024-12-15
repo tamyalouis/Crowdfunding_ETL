@@ -1,40 +1,48 @@
--- Create campaign table
 CREATE TABLE campaign (
-    cf_id SERIAL PRIMARY KEY,
-    contact_id VARCHAR(5),
-    company_name VARCHAR(30),
-    description VARCHAR(50),
-    goal VARCHAR(10),
-    pledged VARCHAR(10),
-	outcome VARCHAR(10),
-	backers_count VARCHAR(5),
-	country VARCHAR(3),
-	currency VARCHAR(3),
-	launched_date DATE,
-	end_date DATE,
-	staff_pick BOOLEAN,
-	spotlight BOOLEAN,
-	category_subcategory VARCHAR(60),
-	category_id VARCHAR(5),
-	subcategory_id VARCHAR(10),
+    cf_id int NOT NULL,
+    contact_id int NOT NULL PRIMARY KEY,
+    company_name varchar(255) NOT NULL,
+    description varchar(255) NOT NULL,
+    goal decimal NOT NULL,
+    pledged decimal NOT NULL,
+    outcome varchar(255) NOT NULL,
+    backers_count int NOT NULL,
+    country varchar(100) NOT NULL,
+    currency varchar(10) NOT NULL,
+    launched_date date NOT NULL,
+    end_date date NOT NULL,
+    staff_pick boolean NOT NULL,
+    spotlight boolean NOT NULL,
+    category_id varchar(20) NOT NULL,
+    subcategory_id varchar(20) NOT NULL
 );
 
--- Create category table
+SELECT *
+FROM campaign;
+
 CREATE TABLE category (
-    category_id VARCHAR(4)
-    category VARCHAR(30),
+    category_id varchar(20) NOT NULL,
+    category varchar(20) NOT NULL
 );
 
--- Create contacts table
-CREATE TABLE contacts (
-    contact_id VARCHAR(10),
-	first_name VARCHAR(20),
-	last_name VARCHAR(20),
-	email TEXT,
-);
+SELECT *
+FROM category;
 
--- Create subcategory table
 CREATE TABLE subcategory (
-    subcategory_id VARCHAR(10),
-    subcategory VARCHAR(30),
+    subcategory_id varchar(20) NOT NULL,  
+    subcategory varchar(20) NOT NULL
 );
+
+SELECT *
+FROM subcategory;
+
+CREATE TABLE contacts (
+    contact_id int NOT NULL,
+    first_name varchar(255) NOT NULL,
+    last_name varchar(255) NOT NULL,
+    email varchar(255) NOT NULL
+);
+
+SELECT *
+FROM contacts;
+
